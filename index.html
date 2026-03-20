@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizations</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <header>
+        <h1>混沌理论可视化</h1>
+        <p>点击按钮探索各种混沌系统与分形</p>
+    </header>
+    <canvas id="myCanvas" width="900" height="700"></canvas>
+    <div class="button-grid">
+	    <button id="showMandelbrot">Mandelbrot Set</button>
+	    <button id="showGameOfLife">Game of Life</button>
+	    <button id="showJulia">Julia Set</button>
+	    <button id="showSierpinski">Sierpinski Set</button>
+	    <button id="showLorenz">Lorenz Attractor</button>
+	    <button id="showRossler">Rossler Attractor</button>
+	    <button id="showKoch">Koch Curve</button>
+	    <button id="showDoublePendulum">Double Pendulum</button>
+	    <button id="showHenon">Henon Map</button>
+	    <button id="showLogistic">Logistic Map</button>
+	    <button id="showIkeda">Ikeda Map</button>
+	    <button id="showCantor">Cantor Set</button>
+	    <button id="showBarnsleyFern">Barnsley Fern Set</button>
+	    <button id="showTuring">Turing Patterns (Coming Soon)</button>
+    </div>
+		
+     <script type="module" src="/static/js/julia.js"></script>
+    <script type="module" src="/static/js/mandelbrot.js"></script>
+    <script type="module" src="/static/js/koch.js"></script>
+    <script type="module" src="/static/js/rossler.js"></script>
+    <script type="module" src="/static/js/gameOfLife.js"></script>
+    <script type="module" src="/static/js/doublePendulum.js"></script>
+    <script type="module" src="/static/js/sierpinski.js"></script>
+    <script type="module" src="/static/js/lorenz.js"></script>
+    <script type="module" src="/static/js/henon.js"></script>
+    <script type="module" src="/static/js/logistic.js"></script>
+    <script type="module" src="/static/js/ikeda.js"></script>
+    <script type="module" src="/static/js/cantor.js"></script>
+    <script type="module" src="/static/js/barnsleyFern.js"></script>
+    <script type="module" src="/static/js/turing.js"></script>
+
+  <!--     引入主控制脚本，使用模块 -->
+    <script type="module" src="static/js/main.js"></script>
+</body>
+</html>

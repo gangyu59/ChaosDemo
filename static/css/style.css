@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#myCanvas {
+    border: 1px solid #ddd; /* subtle border */
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 900 / 700; /* keep correct ratio when CSS scales */
+    height: auto;
+    box-sizing: border-box;
+    display: block;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+header h1 {
+    font-size: clamp(18px, 4vw, 32px);
+    margin: 0;
+}
+
+header p {
+    font-size: clamp(12px, 2vw, 16px);
+    color: #666;
+    margin: 4px 0 0;
+}
+
+/* Button grid (desktop: 2 cols, mobile: 1 col) */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+button {
+    width: 100%; /* fill grid cell */
+    height: auto;
+    padding: 16px 8px;
+    font-size: 16px;
+    margin-top: 0; /* use grid gap instead */
+    cursor: pointer;
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+    line-height: 1.2;
+}
+
+button:hover {
+    background-color: #e7e7e7; /* Slightly darker background on hover */
+}
+
+@media (max-width: 600px) {
+    .button-grid {
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 14px 8px;
+    }
+}
