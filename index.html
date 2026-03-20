@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link rel="manifest" href="/manifest.json">
 </head>
@@ -14,20 +15,27 @@
     </header>
     <canvas id="myCanvas" width="900" height="700"></canvas>
     <div class="button-grid">
-	    <button id="showMandelbrot">Mandelbrot Set</button>
-	    <button id="showGameOfLife">Game of Life</button>
-	    <button id="showJulia">Julia Set</button>
-	    <button id="showSierpinski">Sierpinski Set</button>
-	    <button id="showLorenz">Lorenz Attractor</button>
-	    <button id="showRossler">Rossler Attractor</button>
-	    <button id="showKoch">Koch Curve</button>
-	    <button id="showDoublePendulum">Double Pendulum</button>
-	    <button id="showHenon">Henon Map</button>
-	    <button id="showLogistic">Logistic Map</button>
-	    <button id="showIkeda">Ikeda Map</button>
-	    <button id="showCantor">Cantor Set</button>
-	    <button id="showBarnsleyFern">Barnsley Fern Set</button>
-	    <button id="showTuring">Turing Patterns (Coming Soon)</button>
+        <div class="section-label">Fractals</div>
+	    <button class="btn-fractal" id="showMandelbrot">🌀 Mandelbrot Set</button>
+	    <button class="btn-fractal" id="showJulia">🔮 Julia Set</button>
+	    <button class="btn-fractal" id="showSierpinski">🔺 Sierpinski Set</button>
+	    <button class="btn-fractal" id="showKoch">❄️ Koch Curve</button>
+	    <button class="btn-fractal" id="showCantor">📏 Cantor Set</button>
+	    <button class="btn-fractal" id="showBarnsleyFern">🌿 Barnsley Fern</button>
+
+        <div class="section-label">Attractors</div>
+	    <button class="btn-attractor" id="showLorenz">🌪 Lorenz Attractor</button>
+	    <button class="btn-attractor" id="showRossler">🌊 Rossler Attractor</button>
+	    <button class="btn-attractor" id="showDoublePendulum">⚖️ Double Pendulum</button>
+
+        <div class="section-label">Maps</div>
+	    <button class="btn-map" id="showHenon">♾ Henon Map</button>
+	    <button class="btn-map" id="showLogistic">📈 Logistic Map</button>
+	    <button class="btn-map" id="showIkeda">💫 Ikeda Map</button>
+
+        <div class="section-label">Bio Patterns</div>
+	    <button class="btn-bio" id="showGameOfLife">🧬 Game of Life</button>
+	    <button class="btn-bio" id="showTuring">🧪 Turing Patterns</button>
     </div>
 		
      <script type="module" src="/static/js/julia.js"></script>

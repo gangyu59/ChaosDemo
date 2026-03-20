@@ -1,18 +1,29 @@
+:root {
+    --bg-page: #0d0d1a;
+    --bg-surface: #1a1a2e;
+    --bg-hover: #242442;
+    --accent: #7c3aed;
+    --accent-glow: rgba(124, 58, 237, 0.35);
+    --text-primary: #e8e8f0;
+    --text-muted: #8888aa;
+    --border: #2a2a4a;
+    --canvas-glow: rgba(124, 58, 237, 0.25);
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-}
-
-#myCanvas {
-    border: 1px solid #ddd; /* subtle border */
-    width: 100%;
-    max-width: 900px;
-    aspect-ratio: 900 / 700; /* keep correct ratio when CSS scales */
-    height: auto;
+    padding: 20px 0 30px;
+    min-height: 100vh;
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    background-image:
+        linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
     box-sizing: border-box;
-    display: block;
 }
 
 header {
@@ -25,15 +36,36 @@ header {
 header h1 {
     font-size: clamp(18px, 4vw, 32px);
     margin: 0;
+    background: linear-gradient(135deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 header p {
     font-size: clamp(12px, 2vw, 16px);
-    color: #666;
+    color: var(--text-muted);
     margin: 4px 0 0;
 }
 
-/* Button grid (desktop: 2 cols, mobile: 1 col) */
+#myCanvas {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 900 / 700;
+    height: auto;
+    box-sizing: border-box;
+    display: block;
+    background: #000;
+    box-shadow:
+        0 0 0 1px var(--border),
+        0 0 30px var(--canvas-glow),
+        0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
 .button-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -45,23 +77,66 @@ header p {
     margin-top: 20px;
 }
 
+.section-label {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 8px 0 4px;
+    border-bottom: 1px solid var(--border);
+    margin-top: 8px;
+}
+
 button {
-    width: 100%; /* fill grid cell */
+    width: 100%;
     height: auto;
-    padding: 16px 8px;
-    font-size: 16px;
-    margin-top: 0; /* use grid gap instead */
-    cursor: pointer;
-    background-color: #f8f8f8;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s;
+    padding: 18px 12px;
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
     line-height: 1.2;
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    background-color: #e7e7e7; /* Slightly darker background on hover */
+    background: var(--bg-hover);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow), 0 4px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 6px var(--accent-glow);
+}
+
+.btn-fractal { border-left-color: #22d3ee; }
+.btn-attractor { border-left-color: #f97316; }
+.btn-map { border-left-color: #ec4899; }
+.btn-bio { border-left-color: #34d399; }
+
+.btn-fractal:hover { box-shadow: 0 0 12px rgba(34, 211, 238, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4); }
+.btn-attractor:hover { box-shadow: 0 0 12px rgba(249, 115, 22, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4); }
+.btn-map:hover { box-shadow: 0 0 12px rgba(236, 72, 153, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4); }
+.btn-bio:hover { box-shadow: 0 0 12px rgba(52, 211, 153, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4); }
+
+button:disabled,
+button.coming-soon {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-left-color: var(--text-muted);
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 @media (max-width: 600px) {

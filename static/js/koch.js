@@ -40,9 +40,9 @@ function drawKoch(canvas, ctx, clearCanvasAndStop) {
         }
     }
 
-    // 设置画线样式
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = 1;
+    // 深色背景下使用高对比线条
+    ctx.strokeStyle = '#e8e8f0';
+    ctx.lineWidth = 1.5;
 
     // 计算初始三角形的顶点
     const x1 = centerX - sideLength / 2;

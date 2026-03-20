@@ -64,12 +64,21 @@ function drawDoublePendulum(canvas, ctx, clearCanvasAndStop) {
         ctx.lineTo(x2, y2);
         ctx.stroke();
 
+        // Draw bob points for better visibility on dark canvas
+        ctx.fillStyle = '#f8fafc';
+        ctx.beginPath();
+        ctx.arc(x1, y1, 6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(x2, y2, 7, 0, Math.PI * 2);
+        ctx.fill();
+
         // Request the next animation frame and store the ID
         animationFrameId = requestAnimationFrame(update);
     }
 
-    ctx.strokeStyle = '#000'; // Black color line
-    ctx.lineWidth = 2; // Line thickness
+    ctx.strokeStyle = '#22d3ee'; // High-contrast cyan line
+    ctx.lineWidth = 2.5; // Slightly thicker for dark theme
 
     animationFrameId = requestAnimationFrame(update); // Start the animation
     return animationFrameId; // Return the initial animation frame ID
