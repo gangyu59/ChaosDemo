@@ -1,24 +1,24 @@
-const CACHE_NAME = 'visualizations-cache-v1';
+const CACHE_NAME = 'visualizations-cache-v2';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/static/css/style.css',
-  '/static/js/julia.js',
-  '/static/js/mandelbrot.js',
-  '/static/js/koch.js',
-  '/static/js/rossler.js',
-  '/static/js/gameOfLife.js',
-  '/static/js/doublePendulum.js',
-  '/static/js/sierpinski.js',
-  '/static/js/lorenz.js',
-  '/static/js/henon.js',
-  '/static/js/logistic.js',
-  '/static/js/ikeda.js',
-  '/static/js/cantor.js',
-  '/static/js/barnsleyFern.js',
-  '/static/js/turing.js',
-  '/static/js/main.js'
+  './',
+  './index.html',
+  './manifest.json',
+  './static/css/style.css',
+  './static/js/julia.js',
+  './static/js/mandelbrot.js',
+  './static/js/koch.js',
+  './static/js/rossler.js',
+  './static/js/gameOfLife.js',
+  './static/js/doublePendulum.js',
+  './static/js/sierpinski.js',
+  './static/js/lorenz.js',
+  './static/js/henon.js',
+  './static/js/logistic.js',
+  './static/js/ikeda.js',
+  './static/js/cantor.js',
+  './static/js/barnsleyFern.js',
+  './static/js/turing.js',
+  './static/js/main.js'
 ];
 
 self.addEventListener('install', event => {
